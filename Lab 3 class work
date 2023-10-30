@@ -1,0 +1,465 @@
+//  void main() {
+
+//#1
+//   String name = "Mukhammadjon";
+//   String age = "21";
+//   String height = "172";
+
+//   print("Information about me :");
+//   print("Name: $name");
+//   print("age: $age");
+//   print("height: $height");
+
+// }
+
+//#2
+
+//   print("Enter a number:");
+//   var input = int.parse('4');
+//   if (input % 2 == 0) {
+//     print('$input is even.');
+//   } else {
+//     print('$input is odd.');
+//   }
+// }
+
+//#3
+
+//   print("Odd numbers up to 100:");
+//   for (int i = 1; i <= 100; i++) {
+//     if (i % 2 != 0) {
+//       print(i);
+//     }
+//   }
+
+//   print("Even numbers up to 100:");
+//   for (int i = 2; i <= 100; i += 2) {
+//     print(i);
+//   }
+// }
+
+//#4
+
+//   List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+//   List<int> squaredList = [];
+
+//   for (int number in a) {
+//     squaredList.add(number * number);
+//   }
+
+//   print("Original List: $a");
+//   print("List with Squared Elements: $squaredList");
+// }
+
+//#5
+
+//   int number = 4;
+//   List<int> divisors = [];
+
+//   for (int i = 2; i <= number; i++) {
+//     if (number % i == 0) {
+//       divisors.add(i);
+//     }
+//   }
+
+//   print("Divisors of $number (excluding 1): ${divisors.join(', ')}");
+// }
+
+//#6
+
+//   List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+//   List<int> b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 89];
+//   List<int> matchingElements = [];
+
+//   for (int elementA in a) {
+//     if (b.contains(elementA) && !matchingElements.contains(elementA)) {
+//       matchingElements.add(elementA);
+//     }
+//   }
+
+//   print("List A: $a");
+//   print("List B: $b");
+//   print("Matching Elements: $matchingElements");
+// }
+
+//#7
+
+//   int number = 17;
+
+//   if (isPrime(number)) {
+//     print("$number is a prime number.");
+//   } else {
+//     print("$number is not a prime number.");
+//   }
+// }
+
+// bool isPrime(int n) {
+//   if (n <= 1) {
+//     return false;
+//   }
+//   if (n <= 3) {
+//     return true;
+//   }
+//   if (n % 2 == 0 || n % 3 == 0) {
+//     return false;
+//   }
+//   for (int i = 5; i * i <= n; i += 6) {
+//     if (n % i == 0 || n % (i + 2) == 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+//#8
+
+// List<int> removeDuplicates(List<int> list) {
+//   List<int> distinctList = [];
+//   for (int element in list) {
+//     if (!distinctList.contains(element)) {
+//       distinctList.add(element);
+//     }
+//   }
+//   return distinctList;
+// }
+
+//   List<int> originalList = [1, 1, 2, 3, 3, 4, 5, 5];
+//   List<int> distinctList = removeDuplicates(originalList);
+
+//   print("Original List: $originalList");
+//   print("Distinct List: $distinctList");
+// }
+
+//#9
+
+// List<int> generateFibonacciWithLoop(int limit) {
+//   List<int> fibonacci = [0, 1];
+//   while (fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2] <= limit) {
+//     int nextFib = fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2];
+//     fibonacci.add(nextFib);
+//   }
+//   return fibonacci;
+// }
+
+// List<int> generateFibonacciWithRecursion(int limit, [int a = 0, int b = 1]) {
+//   if (a + b > limit) {
+//     return [];
+//   }
+//   int nextFib = a + b;
+//   List<int> rest = generateFibonacciWithRecursion(limit, b, nextFib);
+//   return [nextFib, ...rest];
+// }
+
+//   int limit = 50;
+//   List<int> fibonacciWithLoop = generateFibonacciWithLoop(limit);
+//   List<int> fibonacciWithRecursion = generateFibonacciWithRecursion(limit);
+
+//   print("Fibonacci numbers up to $limit using loop: $fibonacciWithLoop");
+//   print("Fibonacci numbers up to $limit using recursion: $fibonacciWithRecursion");
+// }
+
+//#11
+
+// String checkPasswordStrength(String password) {
+//   if (password.length < 6) {
+//     return 'weak';
+//   }
+
+//   bool containsUpperCase = false;
+//   bool containsLowerCase = false;
+//   bool containsDigit = false;
+//   bool containsSpecialChar = false;
+
+//   for (int i = 0; i < password.length; i++) {
+//     var character = password[i];
+//     if (character == character.toUpperCase() && character != character.toLowerCase()) {
+//       containsUpperCase = true;
+//     } else if (character == character.toLowerCase() && character != character.toUpperCase()) {
+//       containsLowerCase = true;
+//     } else if (int.tryParse(character) != null) {
+//       containsDigit = true;
+//     } else {
+//       containsSpecialChar = true;
+//     }
+//   }
+
+//   if (containsUpperCase && containsLowerCase && containsDigit && containsSpecialChar) {
+//     return 'strong';
+//   }
+
+//   if ((containsUpperCase || containsLowerCase) && containsDigit) {
+//     return 'normal';
+//   }
+
+//   return 'weak';
+// }
+
+//   String password = 'Pa\$\$w0rd';
+//   String strength = checkPasswordStrength(password);
+
+//   print("Password strength: $strength");
+// }
+
+//#12
+
+// void generateTable(int rows, int cols) {
+//   for (int i = 0; i < rows; i++) {
+//     for (int j = 0; j < cols; j++) {
+//       if (j == 0) {
+//         print('---');
+//       } else {
+//         print(' ---');
+//       }
+//     }
+
+//   for (int j = 0; j < cols; j++) {
+//       if (j == 0) {
+//         print('| |');
+//       } else {
+//         print(' |');
+//       }
+//     }
+//   }
+
+//  for (int j = 0; j < cols; j++) {
+//     if (j == 0) {
+//       print('---');
+//     } else {
+//       print(' ---');
+//     }
+//   }
+// }
+
+//   int numRows = 3;
+//   int numCols = 3;
+
+//   generateTable(numRows, numCols);
+// }
+
+//#Classes
+
+//#1
+
+// class Animal {
+//   String name;
+//   int age;
+
+//   Animal(this.name, this.age);
+
+//   void describe() {
+//     print('This is a $name and it is $age years old.');
+//   }
+// }
+
+// class Car {
+//   String make;
+//   String model;
+//   int year;
+
+//   Car(this.make, this.model, this.year);
+
+//   void describe() {
+//     print('This is a $year $make $model.');
+//   }
+// }
+
+// class Book {
+//   String title;
+//   String author;
+//   int pages;
+
+//   Book(this.title, this.author, this.pages);
+
+//   void describe() {
+//     print('Title: $title, Author: $author, Pages: $pages');
+//   }
+// }
+
+// class Movie {
+//   String title;
+//   String director;
+//   int runtime;
+
+//   Movie(this.title, this.director, this.runtime);
+
+//   void describe() {
+//     print('Title: $title, Director: $director, Runtime: $runtime minutes');
+//   }
+// }
+
+// class Song {
+//   String title;
+//   String artist;
+//   int duration;
+
+//   Song(this.title, this.artist, this.duration);
+
+//   void describe() {
+//     print('Title: $title, Artist: $artist, Duration: $duration seconds');
+//   }
+// }
+
+// void main() {
+//   var animal = Animal('Dog', 5);
+//   animal.describe();
+
+//   var car = Car('Toyota', 'Camry', 2022);
+//   car.describe();
+
+//   var book = Book('Sample Book', 'John Doe', 200);
+//   book.describe();
+
+//   var movie = Movie('The Great Movie', 'Director Name', 120);
+//   movie.describe();
+
+//   var song = Song('Awesome Song', 'Singer Name', 240);
+//   song.describe();
+// }
+
+//#2
+
+// mixin Fly {
+//   void fly() {
+//     print('Flying...');
+//   }
+// }
+
+// class Bird with Fly {}
+
+// void main() {
+//   var bird = Bird();
+//   bird.fly();
+// }
+// mixin Swim {
+//   void swim() {
+//     print('Swimming...');
+//   }
+// }
+
+// class Fish with Swim {}
+// mixin Run {
+//   void run() {
+//     print('Running...');
+//   }
+// }
+
+// class Dog with Run {}
+// mixin Climb {
+//   void climb() {
+//     print('Climbing...');
+//   }
+// }
+
+// class Monkey with Climb {}
+// mixin Jump {
+//   void jump() {
+//     print('Jumping...');
+//   }
+// }
+
+// class Kangaroo with Jump {}
+
+//#3
+
+// abstract class Vehicle {
+//   double speed();
+// }
+
+// class Car extends Vehicle {
+//   double maxSpeed;
+
+//   Car(this.maxSpeed);
+
+//   @override
+//   double speed() {
+//     return maxSpeed;
+//   }
+// }
+
+// class Bike extends Vehicle {
+//   double maxSpeed;
+
+//   Bike(this.maxSpeed);
+
+//   @override
+//   double speed() {
+//     return maxSpeed;
+//   }
+// }
+
+// void main() {
+//   var car = Car(200);
+//   print("Car speed: ${car.speed()} km/h");
+//   var bike = Bike(30);
+//   print("Bike speed: ${bike.speed()} km/h");
+// }
+
+// abstract class Instrument {
+//   void play();
+// }
+
+// class Guitar extends Instrument {
+//   @override
+//   void play() {
+//     print("Playing the guitar.");
+//   }
+// }
+
+// class Piano extends Instrument {
+//   @override
+//   void play() {
+//     print("Playing the piano.");
+//   }
+// }
+
+// abstract class Device {
+//   void powerOn();
+// }
+
+// class Laptop extends Device {
+//   @override
+//   void powerOn() {
+//     print("Turning on the laptop.");
+//   }
+// }
+
+// class Smartphone extends Device {
+//   @override
+//   void powerOn() {
+//     print("Turning on the smartphone.");
+//   }
+// }
+// abstract class Furniture {
+//   void dimensions();
+// }
+
+// class Table extends Furniture {
+//   @override
+//   void dimensions() {
+//     print("The table has dimensions.");
+//   }
+// }
+
+// class Chair extends Furniture {
+//   @override
+//   void dimensions() {
+//     print("The chair has dimensions.");
+//   }
+// }
+// abstract class Appliance {
+//   void powerUsage();
+// }
+
+// class Refrigerator extends Appliance {
+//   @override
+//   void powerUsage() {
+//     print("The refrigerator consumes power.");
+//   }
+// }
+
+// class Oven extends Appliance {
+//   @override
+//   void powerUsage() {
+//     print("The oven consumes power.");
+//   }
+// }
